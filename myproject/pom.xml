@@ -14,6 +14,8 @@
         <module>service-say</module>
         <module>zuul</module>
         <module>config</module>
+        <module>common-utils</module>
+        <module>common-api</module>
     </modules>
 
     <name>myproject</name>
@@ -82,10 +84,10 @@
             <version>2.6.1</version>
         </dependency>
 
-
-
-
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

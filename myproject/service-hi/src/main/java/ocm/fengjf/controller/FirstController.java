@@ -1,5 +1,6 @@
 package ocm.fengjf.controller;
 
+import com.fengjf.Stu;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,4 +25,16 @@ public class FirstController {
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hi " + name + " ,i am from port:" + port;
     }
+
+    @ApiOperation(value = "say Hello", notes = "")
+    @GetMapping("/stu")
+    public Stu stu() {
+        Stu stu = new Stu();
+        stu.setAge(10);
+        stu.setId(11);
+        stu.setName("dddddd");
+        return stu;
+    }
+
+
 }
