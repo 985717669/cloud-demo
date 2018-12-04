@@ -13,6 +13,7 @@
         <module>service-hi</module>
         <module>service-say</module>
         <module>zuul</module>
+        <module>config</module>
     </modules>
 
     <name>myproject</name>
