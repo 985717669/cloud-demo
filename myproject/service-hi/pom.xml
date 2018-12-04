@@ -12,11 +12,20 @@
     <artifactId>service-hi</artifactId>
 
     <dependencies>
+
+        <!--公共依赖,api,utils-->
         <dependency>
             <groupId>com.fengjf</groupId>
             <artifactId>common-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.fengjf</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

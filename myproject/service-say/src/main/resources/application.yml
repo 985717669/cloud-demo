@@ -1,13 +1,20 @@
 server:
   port: 8763
 
-spring:
-  application:
-    name: service-say
-
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
+
+spring:
+  application:
+    name: service-say
+#config 连接
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:8888/
+
