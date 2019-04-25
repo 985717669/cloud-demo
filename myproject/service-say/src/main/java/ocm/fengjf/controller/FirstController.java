@@ -24,6 +24,8 @@ public class FirstController {
     @Value("${foo.name}")
     String fooName;
 
+
+
     @ApiOperation(value = "say Hello", notes = "")
     @GetMapping("/hi")
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
