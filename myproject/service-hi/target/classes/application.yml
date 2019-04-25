@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: service-hi
+  cloud:
+    config:
+      profile: dev
+      label: master
+      uri: http://localhost:8888/
 
 eureka:
   client:

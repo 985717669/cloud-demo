@@ -15,12 +15,3 @@ spring:
       profile: dev
       label: master
       uri: http://localhost:8888/
-
-#zuul:
-#  routes:
-#    api-a:
-#      path: /api-a/**
-#      serviceId: service-hi
-#    api-b:
-#      path: /api-b/**
-#      serviceId: service-say
