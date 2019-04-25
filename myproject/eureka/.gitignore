@@ -1,0 +1,8 @@
+/target/
+*.idea
+*.iws
+*.lst
+*.original
+*.jar
+*.log
+*.iml
