@@ -15,6 +15,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.fengjf</groupId>-->
+            <!--<artifactId>common-utils</artifactId>-->
+            <!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
 
     </dependencies>
 
