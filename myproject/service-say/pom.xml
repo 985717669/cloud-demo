@@ -42,6 +42,13 @@
     </dependencies>
     <build>
         <plugins>
+            <!--自定义插件-->
+            <plugin>
+                <groupId>com.example</groupId>
+                <artifactId>plugindemo</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </plugin>
+
             <!-- mybatis逆向工程 用完需要注释掉,不然部署会报错-->
 
             <plugin>
