@@ -1,9 +1,9 @@
 server:
-  port: 8762
+  port: 8766
 
 spring:
   application:
-    name: service-hi
+    name: kafka-coumue
   cloud:
     config:
       profile: dev
@@ -12,14 +12,12 @@ spring:
 #kakfa配置
   kafka:
     bootstrap-servers: localhost:9092  # 指定kafka 代理地址，可以多个
-    producer:
-      retries: 0
-      # 每次批量发送消息的数量
-      batch-size: 16384
-      buffer-memory: 33554432
-      # 指定消息key和消息体的编解码方式
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: user-log-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 eureka:
   client:

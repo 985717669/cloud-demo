@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>service-hi</artifactId>
+    <artifactId>kafka-coumue</artifactId>
 
     <dependencies>
 
@@ -33,6 +33,7 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
+
     </dependencies>
 
 </project>
