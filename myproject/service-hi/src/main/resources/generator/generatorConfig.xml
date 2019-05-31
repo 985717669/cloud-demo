@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="context1">
+        <!--去mybatis注释-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection connectionURL="jdbc:mysql://rm-wz9xqe04o3v4y20sj1o.mysql.rds.aliyuncs.com:3306/yaobili-business-operations" driverClass="com.mysql.jdbc.Driver" password="ybl2018@" userId="ybl2018" />
+        <!--model类路径-->
+        <javaModelGenerator targetPackage="com.fengjf.entity" targetProject="src/main/java" />
+        <!-- xml映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="ocm.fengjf.mapper" targetProject="src/main/java" />
+        <!--mapper接口生成的位置-->
+        <javaClientGenerator targetPackage="ocm.fengjf.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+        <!--<table  tableName="product_category" domainObjectName="ProductCategory"/>-->
+        <!--<table  tableName="company_info" domainObjectName="CompanyInfo"/>-->
+        <table  tableName="coupon_bussiness" domainObjectName="Bussiness"/>
+    </context>
+</generatorConfiguration>
+

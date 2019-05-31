@@ -20,3 +20,8 @@ spring:
       name: config-client
 
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [health, info, refresh]

@@ -31,6 +31,9 @@ public class FirstController {
         return "hi " + name + " ,i am from port:" + port;
     }
 
+
+
+
     @ApiOperation(value = "say Hello", notes = "")
     @GetMapping("/stu")
     public Stu stu() {
@@ -41,6 +44,5 @@ public class FirstController {
         productKafkaMessage.sendKafkaMessage("stu", stu);
         return stu;
     }
-
 
 }

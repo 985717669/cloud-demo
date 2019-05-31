@@ -18,6 +18,8 @@
         <module>common-api</module>
         <module>gatewaydemo</module>
         <module>kafka-coumue</module>
+        <module>tx-demo</module>
+        <module>tx-demo2</module>
     </modules>
 
     <name>myproject</name>
@@ -85,6 +87,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-actuator</artifactId>
         </dependency>
     </dependencies>
 

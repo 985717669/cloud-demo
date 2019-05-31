@@ -27,15 +27,15 @@ import java.util.UUID;
 public class ExcelUtil {
 
     /**
-     * 导出 Excel ：一个 sheet，带表头
+     * 导出 Excel ：单个 sheet，带表头
      *
      * @param response HttpServletResponse
      * @param list     数据 list，每个元素为一个 BaseRowModel
      * @param fileName 文件名，会自动加上.xlsx
      * @param clazz    list<class> list里泛型对象
      */
-    public static void writeExcel(HttpServletResponse response, List<? extends BaseRowModel> list, String fileName,
-                                  Class clazz) throws IOException {
+    public static void writeExcelSingleSheet(HttpServletResponse response, List<? extends BaseRowModel> list, String fileName,
+                                             Class clazz) throws IOException {
         if (fileName == null) {
             fileName = UUID.randomUUID().toString().replaceAll("-", "");
         }
@@ -53,6 +53,48 @@ public class ExcelUtil {
             Sheet sheet = new Sheet(1, 0, clazz);
             sheet.setSheetName("sheet");
             writer.write(list, sheet);
+            writer.finish();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                out.close();
+                dbfFile.delete();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 导出excel 可以包含多个sheet
+     *
+     * @param response
+     * @param fileName
+     * @param list
+     * @throws IOException
+     */
+    public static void writeExcelMultiSheet(HttpServletResponse response, String fileName, List<EasyExcelExportModel> list) throws IOException {
+        if (fileName == null) {
+            fileName = UUID.randomUUID().toString().replaceAll("-", "");
+        }
+        //创建本地文件
+        String filePath = fileName + ".xlsx";
+        File dbfFile = new File(filePath);
+        if (!dbfFile.exists() || dbfFile.isDirectory()) {
+            dbfFile.createNewFile();
+        }
+        fileName = new String(filePath.getBytes(), "ISO-8859-1");
+        response.addHeader("Content-Disposition", "filename=" + fileName);
+        OutputStream out = response.getOutputStream();
+        try {
+            ExcelWriter writer = new ExcelWriter(out, ExcelTypeEnum.XLSX);
+            for (int i = 0; i < list.size(); i++) {
+                EasyExcelExportModel easyExcelExportModel = list.get(i);
+                Sheet sheet = new Sheet(i, 0, easyExcelExportModel.getClassName());
+                sheet.setSheetName(easyExcelExportModel.getSheetName());
+                writer.write(easyExcelExportModel.getList(), sheet);
+            }
             writer.finish();
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,5 +159,7 @@ public class ExcelUtil {
             this.datas = datas;
         }
     }
+
+
 
 }
