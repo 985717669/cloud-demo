@@ -7,6 +7,10 @@
 继续整合kafka
 调用service-hi中的/stu接口， 发送一条消息给kafka-coumue  需要启动kafka
 
+
+
+#所有的feign调用统一放在common-feign-api中， 谁需要直接依赖common-feign-api
+
 端口
 eureka 8761
 config 8888

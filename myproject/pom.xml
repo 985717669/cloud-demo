@@ -18,8 +18,7 @@
         <module>common-api</module>
         <module>gatewaydemo</module>
         <module>kafka-coumue</module>
-        <module>tx-demo</module>
-        <module>tx-demo2</module>
+        <module>common-feign-api</module>
     </modules>
 
     <name>myproject</name>
